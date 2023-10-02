@@ -2,7 +2,6 @@
   "name": "u-system",
   "version": "0.1.0",
   "private": true,
-  "homepage": "./",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -13,7 +12,6 @@
     "@types/react-dom": "^18.2.7",
     "antd": "^5.9.2",
     "dayjs": "^1.11.9",
-    "gh-pages": "^6.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router": "^6.16.0",
@@ -28,7 +26,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy-gh": "cross-env REACT_APP_GH_PAGES=true npm run build && gh-pages -d build"
+    "deploy-gh": "cross-env cross-env PUBLIC_URL=./ npm run build && gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -49,6 +47,7 @@
     ]
   },
   "devDependencies": {
-    "cross-env": "^7.0.3"
+    "cross-env": "^7.0.3",
+    "gh-pages": "^6.0.0"
   }
 }
