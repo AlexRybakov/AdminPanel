@@ -1,4 +1,5 @@
 import {
+  Navigate,
   RouterProvider,
   createBrowserRouter,
   generatePath,
@@ -33,11 +34,11 @@ function App() {
     },
     {
       path: '*',
-      loader: () => redirect(getHomePath()),
+      element: <Navigate to={'/'} />,
     },
   ]);
 
-  return <div>{routes}</div>;
+  return <>{routes}</>;
 }
 
 export default App;
