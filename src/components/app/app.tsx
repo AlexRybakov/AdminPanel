@@ -1,5 +1,11 @@
-import { RouterProvider, createBrowserRouter, generatePath, redirect } from 'react-router-dom';
-import LayoutScreen from "../layout/layout";
+import {
+  RouterProvider,
+  createBrowserRouter,
+  generatePath,
+  redirect,
+  useRoutes,
+} from 'react-router-dom';
+import LayoutScreen from '../layout/layout';
 import Content from '../content';
 
 const HOME_PATH = '/';
@@ -9,9 +15,9 @@ const ENDPOINTS_PATH = 'endpoints';
 const getHomePath = () => generatePath(HOME_PATH);
 
 function App() {
-  const router = createBrowserRouter([
+  const routes = useRoutes([
     {
-      path: "/",
+      path: '/',
       element: <LayoutScreen />,
       children: [
         {
@@ -19,19 +25,19 @@ function App() {
           children: [
             {
               path: ENDPOINTS_PATH,
-              element: <Content />
-            }
-          ]
-        }
-      ]
+              element: <Content />,
+            },
+          ],
+        },
+      ],
     },
     {
       path: '*',
       loader: () => redirect(getHomePath()),
-    }
+    },
   ]);
 
-  return <RouterProvider router={router} />
-} 
+  return <div>{routes}</div>;
+}
 
 export default App;

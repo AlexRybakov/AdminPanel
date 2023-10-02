@@ -26,7 +26,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy-gh": "cross-env cross-env PUBLIC_URL=./ npm run build && gh-pages -d build"
+    "deploy-gh": "cross-env PUBLIC_URL=./ npm run build && gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
